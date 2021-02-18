@@ -1,0 +1,30 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# rawutil
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This R package contains a collection of miscellaneous utility functions
+
+## Installation
+
+Install from [GitHub](https://github.com/rmgpanw/rawutil) with:
+
+``` r
+devtools::install_github("rawutil")
+```
+

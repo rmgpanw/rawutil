@@ -1,0 +1,8 @@
+reference:
+- title: Summarise
+  desc:  Generate quick summaries for tabular data
+- contents:
+  - my_skim
+- title: Chunked processing
+- contents:
+  - fread_chunked
