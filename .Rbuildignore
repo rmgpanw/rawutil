@@ -1,0 +1,4 @@
+^renv$
+^renv\.lock$
+^rawutil\.Rproj$
+^\.Rproj\.user$
