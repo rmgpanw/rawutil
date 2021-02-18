@@ -8,10 +8,15 @@
 
 # EXPORTED FUNCTIONS ------------------------------------------------------
 
-
+#' Read a file
+#'
+#' @return NULL
+#' @export
+fread_chunked <- function() {
+  NULL
+}
 
 # PRIVATE FUNCTIONS -------------------------------------------------------
-
 
 
 

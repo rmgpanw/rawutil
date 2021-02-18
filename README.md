@@ -14,5 +14,5 @@ This R package contains a collection of miscellaneous utility functions
 Install from [GitHub](https://github.com/rmgpanw/rawutil) with:
 
 ``` r
-devtools::install_github("rawutil")
+devtools::install_github("https://github.com/rmgpanw/rawutil")
 ```

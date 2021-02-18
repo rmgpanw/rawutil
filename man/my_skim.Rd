@@ -24,11 +24,11 @@ Works with \code{dplyr::group_by()} and the pipe. See the
 variables
 }
 \examples{
-library(magrittr)
 # summarise the iris dataset
 my_skim(iris)
 
 # summarise the mtcars dataset by transmissions type ("am": 0 = automatic, 1 = manual)
+library(magrittr)
 mtcars \%>\%
   dplyr::mutate(dplyr::across(tidyselect::all_of(c("cyl", "vs", "am", "gear", "carb")), as.factor))
   dplyr::group_by(am) \%>\%

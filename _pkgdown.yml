@@ -4,5 +4,6 @@ reference:
 - contents:
   - my_skim
 - title: Chunked processing
+  desc: Process a (large) file of tabular data in chunks
 - contents:
   - fread_chunked
