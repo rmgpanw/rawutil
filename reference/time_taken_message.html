@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • rawutil</title>
+<title>Display time taken message — time_taken_message • rawutil</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Display time taken message — time_taken_message" />
+<meta property="og:description" content="Helper function for displaying time taken messages within other functions.
+Use proc.time at start of function and supply this as the
+start_time parameter to this function." />
 
 
 
@@ -58,7 +61,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -100,64 +103,45 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Display time taken message</h1>
+    
+    <div class="hidden name"><code>time_taken_message.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Helper function for displaying time taken messages within other functions.
+Use <code><a href='https://rdrr.io/r/base/proc.time.html'>proc.time</a></code> at start of function and supply this as the
+<code>start_time</code> parameter to this function.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>time_taken_message</span><span class='op'>(</span><span class='va'>start_time</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-summarise" class="hasAnchor"><a href="#section-summarise" class="anchor"></a>Summarise</h2>
-          <p class="section-desc"><p>Generate quick summaries for tabular data</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="my_skim.html">my_skim()</a></code> </p>
-        </td>
-        <td><p>Functions for summarising tabular data.
-Quickly summarise a dataframe</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-chunked-processing" class="hasAnchor"><a href="#section-chunked-processing" class="anchor"></a>Chunked processing</h2>
-          <p class="section-desc"><p>Process a (large) file of tabular data in chunks</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="fread_chunked.html">fread_chunked()</a></code> </p>
-        </td>
-        <td><p>Functions to read/process data in chunks. Useful for large datasets which may
-not fit into memory
-Read a file</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>start_time</th>
+      <td><p>The start time.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A message stating time taken since start time</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># a function that sleeps for a specified duration and displays a 'timet taken' message when completed</span>
+<span class='va'>sleep_fn</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>duration</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='va'>start_time</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/proc.time.html'>proc.time</a></span><span class='op'>(</span><span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/Sys.sleep.html'>Sys.sleep</a></span><span class='op'>(</span><span class='va'>duration</span><span class='op'>)</span>
+  <span class='fu'>time_taken_message</span><span class='op'>(</span><span class='va'>start_time</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+<span class='fu'>sleep_fn</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Time taken: 0 minutes, 1 seconds.</span></div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
