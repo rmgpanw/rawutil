@@ -175,42 +175,72 @@ variables</p>
 <span class='co'># summarise the mtcars dataset by transmissions type ("am": 0 = automatic, 1 = manual)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://magrittr.tidyverse.org'>magrittr</a></span><span class='op'>)</span>
 <span class='va'>mtcars</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/across.html'>across</a></span><span class='op'>(</span><span class='fu'>tidyselect</span><span class='fu'>::</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/all_of.html'>all_of</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"cyl"</span>, <span class='st'>"vs"</span>, <span class='st'>"am"</span>, <span class='st'>"gear"</span>, <span class='st'>"carb"</span><span class='op'>)</span><span class='op'>)</span>, <span class='va'>as.factor</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-#&gt; Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
-#&gt; Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-#&gt; Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-#&gt; Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-#&gt; Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-#&gt; Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
-#&gt; Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-#&gt; Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-#&gt; Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-#&gt; Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
-#&gt; Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
-#&gt; Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
-#&gt; Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
-#&gt; Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
-#&gt; Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
-#&gt; Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
-#&gt; Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
-#&gt; Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-#&gt; Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
-#&gt; Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-#&gt; Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
-#&gt; Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
-#&gt; AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
-#&gt; Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
-#&gt; Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
-#&gt; Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
-#&gt; Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
-#&gt; Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
-#&gt; Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
-#&gt; Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
-#&gt; Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
-#&gt; Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</div><div class='input'>  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>am</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>
+    <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/across.html'>across</a></span><span class='op'>(</span>
+      <span class='fu'>tidyselect</span><span class='fu'>::</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/all_of.html'>all_of</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"cyl"</span>, <span class='st'>"vs"</span>, <span class='st'>"am"</span>, <span class='st'>"gear"</span>, <span class='st'>"carb"</span><span class='op'>)</span><span class='op'>)</span>,
+      <span class='va'>as.factor</span><span class='op'>)</span>
+    <span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>am</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'>my_skim</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in dplyr::group_by(am): object 'am' not found</span></div><div class='input'>
+</div><div class='output co'>#&gt; ── Data Summary ────────────────────────
+#&gt;                            Values    
+#&gt; Name                       Piped data
+#&gt; Number of rows             32        
+#&gt; Number of columns          11        
+#&gt; _______________________              
+#&gt; Column type frequency:               
+#&gt;   factor                   4         
+#&gt;   numeric                  6         
+#&gt; ________________________             
+#&gt; Group variables            am        
+#&gt; 
+#&gt; ── Variable type: factor ───────────────────────────────────────────────────────
+#&gt;   skim_variable am    n_missing complete_rate ordered n_unique
+#&gt; 1 cyl           0             0             1 FALSE          3
+#&gt; 2 cyl           1             0             1 FALSE          3
+#&gt; 3 vs            0             0             1 FALSE          2
+#&gt; 4 vs            1             0             1 FALSE          2
+#&gt; 5 gear          0             0             1 FALSE          2
+#&gt; 6 gear          1             0             1 FALSE          2
+#&gt; 7 carb          0             0             1 FALSE          4
+#&gt; 8 carb          1             0             1 FALSE          5
+#&gt;   top_counts             pct                                                   
+#&gt; 1 8: 12, 6: 4, 4: 3      4: 15.8%, 6: 21.1%, 8: 63.2%,                         
+#&gt; 2 4: 8, 6: 3, 8: 2       4: 61.5%, 6: 23.1%, 8: 15.4%,                         
+#&gt; 3 0: 12, 1: 7            0: 63.2%, 1: 36.8%,                                   
+#&gt; 4 1: 7, 0: 6             0: 46.2%, 1: 53.8%,                                   
+#&gt; 5 3: 15, 4: 4, 5: 0      3: 78.9%, 4: 21.1%, 5: 0%,                            
+#&gt; 6 4: 8, 5: 5, 3: 0       3: 0%, 4: 61.5%, 5: 38.5%,                            
+#&gt; 7 4: 7, 2: 6, 1: 3, 3: 3 1: 15.8%, 2: 31.6%, 3: 15.8%, 4: 36.8%, 6: 0%, 8: 0%, 
+#&gt; 8 1: 4, 2: 4, 4: 3, 6: 1 1: 30.8%, 2: 30.8%, 3: 0%, 4: 23.1%, 6: 7.7%, 8: 7.7%,
+#&gt; 
+#&gt; ── Variable type: numeric ──────────────────────────────────────────────────────
+#&gt;    skim_variable am    n_missing complete_rate   mean      sd     p0    p25
+#&gt;  1 mpg           0             0             1  17.1    3.83   10.4   15.0 
+#&gt;  2 mpg           1             0             1  24.4    6.17   15     21   
+#&gt;  3 disp          0             0             1 290.   110.    120.   196.  
+#&gt;  4 disp          1             0             1 144.    87.2    71.1   79   
+#&gt;  5 hp            0             0             1 160.    53.9    62    116.  
+#&gt;  6 hp            1             0             1 127.    84.1    52     66   
+#&gt;  7 drat          0             0             1   3.29   0.392   2.76   3.07
+#&gt;  8 drat          1             0             1   4.05   0.364   3.54   3.85
+#&gt;  9 wt            0             0             1   3.77   0.777   2.46   3.44
+#&gt; 10 wt            1             0             1   2.41   0.617   1.51   1.94
+#&gt; 11 qsec          0             0             1  18.2    1.75   15.4   17.2 
+#&gt; 12 qsec          1             0             1  17.4    1.79   14.5   16.5 
+#&gt;       p50    p75   p100 hist 
+#&gt;  1  17.3   19.2   24.4  ▂▇▇▅▂
+#&gt;  2  22.8   30.4   33.9  ▃▇▃▂▇
+#&gt;  3 276.   360    472    ▇▃▇▆▅
+#&gt;  4 120.   160    351    ▇▃▁▁▂
+#&gt;  5 175    192.   245    ▃▅▂▇▅
+#&gt;  6 109    113    335    ▇▅▁▁▁
+#&gt;  7   3.15   3.70   3.92 ▂▇▁▁▅
+#&gt;  8   4.08   4.22   4.93 ▅▇▅▂▂
+#&gt;  9   3.52   3.84   5.42 ▁▇▃▁▂
+#&gt; 10   2.32   2.78   3.57 ▆▇▂▆▃
+#&gt; 11  17.8   19.2   22.9  ▂▇▂▂▁
+#&gt; 12  17.0   18.6   19.9  ▇▂▇▇▇</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
