@@ -2,14 +2,10 @@
 % Please edit documentation in R/chunked.R
 \name{fread_chunked}
 \alias{fread_chunked}
-\title{Functions to read/process data in chunks. Useful for large datasets which may
-not fit into memory
-Read a file}
+\title{Read a file}
 \usage{
 fread_chunked()
 }
 \description{
-Functions to read/process data in chunks. Useful for large datasets which may
-not fit into memory
 Read a file
 }

@@ -30,7 +30,11 @@ my_skim(iris)
 # summarise the mtcars dataset by transmissions type ("am": 0 = automatic, 1 = manual)
 library(magrittr)
 mtcars \%>\%
-  dplyr::mutate(dplyr::across(tidyselect::all_of(c("cyl", "vs", "am", "gear", "carb")), as.factor))
+  dplyr::mutate(
+    dplyr::across(
+      tidyselect::all_of(c("cyl", "vs", "am", "gear", "carb")),
+      as.factor)
+    ) \%>\%
   dplyr::group_by(am) \%>\%
   my_skim()
 

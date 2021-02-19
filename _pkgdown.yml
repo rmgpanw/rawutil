@@ -1,9 +1,20 @@
 reference:
-- title: Summarise
-  desc:  Generate quick summaries for tabular data
-- contents:
-  - my_skim
 - title: Chunked processing
   desc: Process a (large) file of tabular data in chunks
 - contents:
   - fread_chunked
+
+- title: Summarise
+  desc:  Generate quick summaries for tabular data
+- contents:
+  - my_skim
+
+- title: Utilites
+  desc: Miscellaneous general utility functions
+- contents:
+  - time_taken_message
+
+- title: Package overview
+  desc: General summary of package contents
+- contents:
+  - rawutil
