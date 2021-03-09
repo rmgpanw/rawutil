@@ -1,13 +1,13 @@
 # OVERVIEW ----------------------------------------------------------------
 
-#' Functions for summarising tabular data.
+# Functions for summarising tabular data.
 
 # TODO --------------------------------------------------------------------
 
 
 # EXPORTED FUNCTIONS ------------------------------------------------------
 
-#' Quickly summarise a dataframe
+#' Summarise a dataframe
 #'
 #' A tidyverse-friendly summary function that summarises a dataframe by column
 #' type.
@@ -16,6 +16,8 @@
 #' \code{\link[skimr]{skim}} documentation for more details. Adapts the
 #' \code{skimr::skim()} function to include proportion counts for factor
 #' variables
+#'
+#' In general, more informative results are returned if character-type columns are first converted to factors (see examples below)
 #'
 #' @inheritParams skimr::skim
 #' @examples

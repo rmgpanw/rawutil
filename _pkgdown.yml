@@ -15,6 +15,11 @@ reference:
   - time_taken_message
   - revalue_col
 
+- title: Statistics
+  desc: Miscellaneous statistics functions
+- contents:
+  - calc_interaction_pvalues
+
 - title: Dummy data
   desc: Functions to generate dummy data for experimenting with
 - contents:
