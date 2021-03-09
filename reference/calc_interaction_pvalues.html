@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • rawutil</title>
+<title>Calculate interaction p-values — calc_interaction_pvalues • rawutil</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Calculate interaction p-values — calc_interaction_pvalues" />
+<meta property="og:description" content="Calculate interaction p-values" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -100,143 +101,52 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Calculate interaction p-values</h1>
+    
+    <div class="hidden name"><code>calc_interaction_pvalues.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Calculate interaction p-values</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>calc_interaction_pvalues</span><span class='op'>(</span><span class='va'>effect1</span>, <span class='va'>effect2</span>, <span class='va'>se1</span>, <span class='va'>se2</span>, pvals_only <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-chunked-processing" class="hasAnchor"><a href="#section-chunked-processing" class="anchor"></a>Chunked processing</h2>
-          <p class="section-desc"><p>Process a (large) file of tabular data in chunks</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="fread_chunked.html">fread_chunked()</a></code> </p>
-        </td>
-        <td><p>Read a file</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-summarise" class="hasAnchor"><a href="#section-summarise" class="anchor"></a>Summarise</h2>
-          <p class="section-desc"><p>Generate quick summaries for tabular data</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="my_skim.html">my_skim()</a></code> </p>
-        </td>
-        <td><p>Summarise a dataframe</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-utilites" class="hasAnchor"><a href="#section-utilites" class="anchor"></a>Utilites</h2>
-          <p class="section-desc"><p>Miscellaneous general utility functions</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="time_taken_message.html">time_taken_message()</a></code> </p>
-        </td>
-        <td><p>Display time taken message</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="revalue_col.html">revalue_col()</a></code> </p>
-        </td>
-        <td><p>Revalue values in a dataframe column</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-statistics" class="hasAnchor"><a href="#section-statistics" class="anchor"></a>Statistics</h2>
-          <p class="section-desc"><p>Miscellaneous statistics functions</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="calc_interaction_pvalues.html">calc_interaction_pvalues()</a></code> </p>
-        </td>
-        <td><p>Calculate interaction p-values</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-dummy-data" class="hasAnchor"><a href="#section-dummy-data" class="anchor"></a>Dummy data</h2>
-          <p class="section-desc"><p>Functions to generate dummy data for experimenting with</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="make_dummy_df.html">make_dummy_df()</a></code> </p>
-        </td>
-        <td><p>Make dummy data frame</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-package-overview" class="hasAnchor"><a href="#section-package-overview" class="anchor"></a>Package overview</h2>
-          <p class="section-desc"><p>General summary of package contents</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="rawutil.html">rawutil</a></code> </p>
-        </td>
-        <td><p>rawutil</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>effect1</th>
+      <td><p>numeric vector</p></td>
+    </tr>
+    <tr>
+      <th>effect2</th>
+      <td><p>numeric vector</p></td>
+    </tr>
+    <tr>
+      <th>se1</th>
+      <td><p>numeric vector</p></td>
+    </tr>
+    <tr>
+      <th>se2</th>
+      <td><p>numeric vector</p></td>
+    </tr>
+    <tr>
+      <th>pvals_only</th>
+      <td><p>logical. Indicate whether to return only interaction
+p-values, or a dataframe also including the input betas and standard
+errors. Default = <code>TRUE</code></p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>df or numeric vector of interaction p-values (determined by
+<code>pvals_only</code> argument)</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
