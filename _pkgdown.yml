@@ -13,6 +13,12 @@ reference:
   desc: Miscellaneous general utility functions
 - contents:
   - time_taken_message
+  - revalue_col
+
+- title: Dummy data
+  desc: Functions to generate dummy data for experimenting with
+- contents:
+  - make_dummy_df
 
 - title: Package overview
   desc: General summary of package contents

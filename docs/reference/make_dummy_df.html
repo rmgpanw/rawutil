@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • rawutil</title>
+<title>Make dummy data frame — make_dummy_df • rawutil</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Make dummy data frame — make_dummy_df" />
+<meta property="og:description" content="Returns a dataframe with 6 rows and columns of types character, integer and factor" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -100,125 +101,41 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Make dummy data frame</h1>
+    
+    <div class="hidden name"><code>make_dummy_df.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Returns a dataframe with 6 rows and columns of types character, integer and factor</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>make_dummy_df</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-chunked-processing" class="hasAnchor"><a href="#section-chunked-processing" class="anchor"></a>Chunked processing</h2>
-          <p class="section-desc"><p>Process a (large) file of tabular data in chunks</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="fread_chunked.html">fread_chunked()</a></code> </p>
-        </td>
-        <td><p>Read a file</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-summarise" class="hasAnchor"><a href="#section-summarise" class="anchor"></a>Summarise</h2>
-          <p class="section-desc"><p>Generate quick summaries for tabular data</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="my_skim.html">my_skim()</a></code> </p>
-        </td>
-        <td><p>Functions for summarising tabular data.
-Quickly summarise a dataframe</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-utilites" class="hasAnchor"><a href="#section-utilites" class="anchor"></a>Utilites</h2>
-          <p class="section-desc"><p>Miscellaneous general utility functions</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="time_taken_message.html">time_taken_message()</a></code> </p>
-        </td>
-        <td><p>Display time taken message</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="revalue_col.html">revalue_col()</a></code> </p>
-        </td>
-        <td><p>Revalue values in a dataframe column</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-dummy-data" class="hasAnchor"><a href="#section-dummy-data" class="anchor"></a>Dummy data</h2>
-          <p class="section-desc"><p>Functions to generate dummy data for experimenting with</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="make_dummy_df.html">make_dummy_df()</a></code> </p>
-        </td>
-        <td><p>Make dummy data frame</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-package-overview" class="hasAnchor"><a href="#section-package-overview" class="anchor"></a>Package overview</h2>
-          <p class="section-desc"><p>General summary of package contents</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="rawutil.html">rawutil</a></code> </p>
-        </td>
-        <td><p>rawutil</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>df</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>make_dummy_df</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;    chr int  fac   log chr_rpt
+#&gt; 1    a   1    a  TRUE       a
+#&gt; 2    b   2    b  TRUE       a
+#&gt; 3    c   3    c  TRUE       a
+#&gt; 4    d   4    d  TRUE       c
+#&gt; 5    e   5    e  TRUE       c
+#&gt; 6 &lt;NA&gt;  NA &lt;NA&gt; FALSE       c</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>make_dummy_df</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; 'data.frame':	6 obs. of  5 variables:
+#&gt;  $ chr    : chr  "a" "b" "c" "d" ...
+#&gt;  $ int    : int  1 2 3 4 5 NA
+#&gt;  $ fac    : Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5 NA
+#&gt;  $ log    : logi  TRUE TRUE TRUE TRUE TRUE FALSE
+#&gt;  $ chr_rpt: chr  "a" "a" "a" "c" ...</div></pre>
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
