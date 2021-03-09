@@ -3,7 +3,7 @@
 \docType{package}
 \name{rawutil}
 \alias{rawutil}
-\title{rawutil: Miscellaneous R tools}
+\title{rawutil}
 \description{
-A miscellaneous collection of useful R tools.
+A miscellaneous collection of my general purpose R tools.
 }

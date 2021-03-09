@@ -36,4 +36,64 @@ time_taken_message <- function(start_time) {
           " seconds.")
 }
 
+
+#' Revalue values in a dataframe column
+#'
+#' Similar idea to
+#' \href{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html}{pandas.replace
+#' method} using a dictionary for the \code{value} argument. \strong{Note:} only works with columns that are of type numeric (including integer) or character.
+#'
+#' @param df dataframe.
+#' @param colname character. Name of column to be relabelled
+#' @param dict a named vector. \code{names(dict)} are the 'keys' i.e. the
+#'   existing values in \code{df[[colname]]} to be replaced. These should be
+#'   unique. An error is raised if non-unique values are found in
+#'   \code{names(dict)}
+#' @param default_value default value to use for values in \code{df[[colname]]}
+#'   that are not present in \code{names(dict)}. By default this is \code{NULL},
+#'   meaning that values not present in \code{names(dict)} will remain
+#'   unchanged.
+#'
+#' @return dataframe
+#' @export
+revalue_col <-
+  function(df,
+           colname,
+           dict,
+           default_value = NULL) {
+
+    # raise an error if column is not character/numeric/integer
+    assertthat::assert_that(class(df[[colname]]) %in% c("numeric", "integer", "character"),
+                            msg = paste("Error! Selected column must be of type numeric/integer/character. df[[colname]] is type:", class(df[[colname]])))
+
+    # `dict` is a named vector - check the names (keys) are unique
+    if (length(unique(names(dict))) != length(dict)) {
+      stop("names(dict) contains non-unique values")
+    }
+
+    # if default_value specified (i.e. default_value is not NULL), check length == 1
+    if (!is.null(default_value)) {
+      assertthat::are_equal(length(default_value), 1)
+    }
+
+    # replace values
+    if (is.null(default_value)) {
+      # if old value is not in `dict`, then keep unchanged
+      df[[colname]] <-  ifelse(
+          test = (df[[colname]] %in% names(dict)),
+          yes = dict[df[[colname]]],
+          no = df[[colname]]
+        )
+    } else {
+      # if old value is not in `dict`, then change to default_value
+      df[[colname]] <-  ifelse(
+        test = (df[[colname]] %in% names(dict)),
+        yes = dict[df[[colname]]],
+        no = default_value
+      )
+    }
+
+    return(df)
+  }
+
 # PRIVATE FUNCTIONS -------------------------------------------------------

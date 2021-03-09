@@ -1,8 +1,8 @@
 
 
-#' rawutil: Miscellaneous R tools
+#' rawutil
 #'
-#' A miscellaneous collection of useful R tools.
+#' A miscellaneous collection of my general purpose R tools.
 #' @docType package
 #' @name rawutil
 #' @importFrom magrittr "%>%"

@@ -7,7 +7,9 @@
 
 <!-- badges: end -->
 
-This R package contains a collection of miscellaneous utility functions
+This R package contains a collection of miscellaneous utility functions.
+Please see [package website](https://rmgpanw.github.io/rawutil/) for
+further information.
 
 ## Installation
 
