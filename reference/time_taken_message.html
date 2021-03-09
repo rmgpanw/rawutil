@@ -132,7 +132,8 @@ Use <code><a href='https://rdrr.io/r/base/proc.time.html'>proc.time</a></code> a
     <p>A message stating time taken since start time</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># a function that sleeps for a specified duration and displays a 'timet taken' message when completed</span>
+    <pre class="examples"><div class='input'><span class='co'># a function that sleeps for a specified duration and displays a</span>
+<span class='co'># 'time taken' message when completed</span>
 <span class='va'>sleep_fn</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>duration</span><span class='op'>)</span> <span class='op'>{</span>
   <span class='va'>start_time</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/proc.time.html'>proc.time</a></span><span class='op'>(</span><span class='op'>)</span>
   <span class='fu'><a href='https://rdrr.io/r/base/Sys.sleep.html'>Sys.sleep</a></span><span class='op'>(</span><span class='va'>duration</span><span class='op'>)</span>
