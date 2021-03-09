@@ -23,7 +23,7 @@ calc_interaction_pvalues <- function(effect1,
   se_diff <- sqrt(se1^2 + se2^2)
 
   # test
-  pvalue <- pnorm(abs(difference / se_diff), lower.tail = F) * 2
+  pvalue <- stats::pnorm(abs(difference / se_diff), lower.tail = F) * 2
 
   # results
   res <- data.frame(point = difference, se = se_diff, pval = pvalue)

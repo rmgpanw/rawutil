@@ -8,6 +8,8 @@
 [![Travis build
 status](https://travis-ci.com/rmgpanw/rawutil.svg?branch=main)](https://travis-ci.com/rmgpanw/rawutil)
 [![R-CMD-check](https://github.com/rmgpanw/rawutil/workflows/R-CMD-check/badge.svg)](https://github.com/rmgpanw/rawutil/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/rmgpanw/rawutil/branch/main/graph/badge.svg)](https://codecov.io/gh/rmgpanw/rawutil?branch=main)
 <!-- badges: end -->
 
 This R package contains a collection of miscellaneous utility functions.

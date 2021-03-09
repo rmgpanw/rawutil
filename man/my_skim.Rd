@@ -2,8 +2,7 @@
 % Please edit documentation in R/summarise.R
 \name{my_skim}
 \alias{my_skim}
-\title{Functions for summarising tabular data.
-Quickly summarise a dataframe}
+\title{Summarise a dataframe}
 \usage{
 my_skim(data, ...)
 }
@@ -22,6 +21,8 @@ Works with \code{dplyr::group_by()} and the pipe. See the
 \code{\link[skimr]{skim}} documentation for more details. Adapts the
 \code{skimr::skim()} function to include proportion counts for factor
 variables
+
+In general, more informative results are returned if character-type columns are first converted to factors (see examples below)
 }
 \examples{
 # summarise the iris dataset
