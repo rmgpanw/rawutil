@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • rawutil</title>
+<title>Plot a heatmap — plot_heatmap • rawutil</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Plot a heatmap — plot_heatmap" />
+<meta property="og:description" content="Plots a heatmap using geom_tile()" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -100,162 +101,100 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Plot a heatmap</h1>
+    
+    <div class="hidden name"><code>plot_heatmap.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Plots a heatmap using geom_tile()</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>plot_heatmap</span><span class='op'>(</span>
+  <span class='va'>df</span>,
+  <span class='va'>x</span>,
+  <span class='va'>y</span>,
+  <span class='va'>fill</span>,
+  x_order <span class='op'>=</span> <span class='cn'>NULL</span>,
+  y_order <span class='op'>=</span> <span class='cn'>NULL</span>,
+  xlab <span class='op'>=</span> <span class='st'>"x title"</span>,
+  ylab <span class='op'>=</span> <span class='st'>"y title"</span>,
+  legend_lab <span class='op'>=</span> <span class='st'>"legend title"</span>,
+  xlab_text_angle <span class='op'>=</span> <span class='fl'>90</span>,
+  ylab_text_angle <span class='op'>=</span> <span class='fl'>0</span>,
+  xlab_text_size <span class='op'>=</span> <span class='cn'>NULL</span>,
+  ylab_text_size <span class='op'>=</span> <span class='cn'>NULL</span>,
+  geom_tile_color <span class='op'>=</span> <span class='st'>"white"</span>
+<span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-chunked-processing" class="hasAnchor"><a href="#section-chunked-processing" class="anchor"></a>Chunked processing</h2>
-          <p class="section-desc"><p>Process a (large) file of tabular data in chunks</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="fread_chunked.html">fread_chunked()</a></code> </p>
-        </td>
-        <td><p>Read a file</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-summarise" class="hasAnchor"><a href="#section-summarise" class="anchor"></a>Summarise</h2>
-          <p class="section-desc"><p>Generate quick summaries for tabular data</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="my_skim.html">my_skim()</a></code> </p>
-        </td>
-        <td><p>Summarise a dataframe</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-utilites" class="hasAnchor"><a href="#section-utilites" class="anchor"></a>Utilites</h2>
-          <p class="section-desc"><p>Miscellaneous general utility functions</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="time_taken_message.html">time_taken_message()</a></code> </p>
-        </td>
-        <td><p>Display time taken message</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="revalue_col.html">revalue_col()</a></code> </p>
-        </td>
-        <td><p>Revalue values in a dataframe column</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-plots" class="hasAnchor"><a href="#section-plots" class="anchor"></a>Plots</h2>
-          <p class="section-desc"><p>Plotting functions</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="plot_heatmap.html">plot_heatmap()</a></code> </p>
-        </td>
-        <td><p>Plot a heatmap</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-statistics" class="hasAnchor"><a href="#section-statistics" class="anchor"></a>Statistics</h2>
-          <p class="section-desc"><p>Miscellaneous statistics functions</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="calc_interaction_pvalues.html">calc_interaction_pvalues()</a></code> </p>
-        </td>
-        <td><p>Calculate interaction p-values</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-dummy-data" class="hasAnchor"><a href="#section-dummy-data" class="anchor"></a>Dummy data</h2>
-          <p class="section-desc"><p>Functions to generate dummy data for experimenting with</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="make_dummy_df.html">make_dummy_df()</a></code> </p>
-        </td>
-        <td><p>Make dummy data frame</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-package-overview" class="hasAnchor"><a href="#section-package-overview" class="anchor"></a>Package overview</h2>
-          <p class="section-desc"><p>General summary of package contents</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="rawutil.html">rawutil</a></code> </p>
-        </td>
-        <td><p>rawutil</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>df</th>
+      <td><p>df</p></td>
+    </tr>
+    <tr>
+      <th>x</th>
+      <td><p>character</p></td>
+    </tr>
+    <tr>
+      <th>y</th>
+      <td><p>character</p></td>
+    </tr>
+    <tr>
+      <th>fill</th>
+      <td><p>character</p></td>
+    </tr>
+    <tr>
+      <th>x_order</th>
+      <td><p>chracter vector</p></td>
+    </tr>
+    <tr>
+      <th>y_order</th>
+      <td><p>character vetor</p></td>
+    </tr>
+    <tr>
+      <th>xlab</th>
+      <td><p>character</p></td>
+    </tr>
+    <tr>
+      <th>ylab</th>
+      <td><p>character</p></td>
+    </tr>
+    <tr>
+      <th>legend_lab</th>
+      <td><p>character</p></td>
+    </tr>
+    <tr>
+      <th>xlab_text_angle</th>
+      <td><p>numeric</p></td>
+    </tr>
+    <tr>
+      <th>ylab_text_angle</th>
+      <td><p>numeric</p></td>
+    </tr>
+    <tr>
+      <th>xlab_text_size</th>
+      <td><p>numeric</p></td>
+    </tr>
+    <tr>
+      <th>ylab_text_size</th>
+      <td><p>numeric</p></td>
+    </tr>
+    <tr>
+      <th>geom_tile_color</th>
+      <td><p>character</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>ggplot object</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
