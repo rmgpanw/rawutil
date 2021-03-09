@@ -5,6 +5,9 @@
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.com/rmgpanw/rawutil.svg?branch=main)](https://travis-ci.com/rmgpanw/rawutil)
+[![R-CMD-check](https://github.com/rmgpanw/rawutil/workflows/R-CMD-check/badge.svg)](https://github.com/rmgpanw/rawutil/actions)
 <!-- badges: end -->
 
 This R package contains a collection of miscellaneous utility functions.

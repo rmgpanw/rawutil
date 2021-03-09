@@ -16,7 +16,8 @@
 #' @return A message stating time taken since start time
 #' @export
 #' @examples
-#' # a function that sleeps for a specified duration and displays a 'timet taken' message when completed
+#' # a function that sleeps for a specified duration and displays a
+#' # 'time taken' message when completed
 #' sleep_fn <- function(duration) {
 #'   start_time <- proc.time()
 #'   Sys.sleep(duration)

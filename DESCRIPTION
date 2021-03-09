@@ -18,9 +18,13 @@ Imports:
     data.table,
     dplyr,
     magrittr,
+    purrr,
     readr,
+    rlang,
     skimr,
     stringr,
+    tibble,
+    tidyr,
     tidyselect
 Suggests: 
     testthat (>= 3.0.0)

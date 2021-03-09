@@ -18,7 +18,8 @@ Use \code{\link[base]{proc.time}} at start of function and supply this as the
 \code{start_time} parameter to this function.
 }
 \examples{
-# a function that sleeps for a specified duration and displays a 'timet taken' message when completed
+# a function that sleeps for a specified duration and displays a
+# 'time taken' message when completed
 sleep_fn <- function(duration) {
   start_time <- proc.time()
   Sys.sleep(duration)
