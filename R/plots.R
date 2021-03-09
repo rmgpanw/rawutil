@@ -58,7 +58,9 @@ plot_heatmap <- function(df,
     # scale_fill_distiller(palette = palette) +
     ggplot2::theme(
       axis.text.x = ggplot2::element_text(angle = xlab_text_angle, size = xlab_text_size),
-      axis.text.y = ggplot2::element_text(angle = ylab_text_angle, size = ylab_text_size)
+      axis.text.y = ggplot2::element_text(angle = ylab_text_angle, size = ylab_text_size),
+      axis.ticks.x = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank(),
     ) +
     ggplot2::xlab(xlab) +
     ggplot2::ylab(ylab) +
