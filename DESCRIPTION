@@ -17,6 +17,7 @@ Imports:
     assertthat,
     data.table,
     dplyr,
+    ggplot2,
     magrittr,
     purrr,
     readr,

@@ -15,6 +15,11 @@ reference:
   - time_taken_message
   - revalue_col
 
+- title: Plots
+  desc: Plotting functions
+- contents:
+  - plot_heatmap
+
 - title: Statistics
   desc: Miscellaneous statistics functions
 - contents:
