@@ -53,7 +53,7 @@ plot_heatmap <- function(df,
 
   # plot
   df %>%
-    ggplot2::ggplot(aes(x = .data[[x]], y = .data[[y]], fill = .data[[fill]])) +
+    ggplot2::ggplot(ggplot2::aes(x = .data[[x]], y = .data[[y]], fill = .data[[fill]])) +
     ggplot2::geom_tile(color = geom_tile_color) +
     # scale_fill_distiller(palette = palette) +
     ggplot2::theme(
