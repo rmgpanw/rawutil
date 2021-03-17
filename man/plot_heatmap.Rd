@@ -10,6 +10,7 @@ plot_heatmap(
   y,
   fill,
   label = NULL,
+  label_size = NULL,
   x_order = NULL,
   y_order = NULL,
   xlab = "x title",
@@ -19,6 +20,10 @@ plot_heatmap(
   ylab_text_angle = 0,
   xlab_text_size = NULL,
   ylab_text_size = NULL,
+  xtitle_text_size = NULL,
+  ytitle_text_size = NULL,
+  legend_title_size = NULL,
+  legend_text_size = NULL,
   geom_tile_color = "white"
 )
 }
@@ -31,7 +36,11 @@ plot_heatmap(
 
 \item{fill}{character}
 
-\item{x_order}{chracter vector}
+\item{label}{character. Annotate tiles}
+
+\item{label_size}{numeric. Text size for tile annotations}
+
+\item{x_order}{chracter vector.}
 
 \item{y_order}{character vetor}
 
@@ -48,6 +57,14 @@ plot_heatmap(
 \item{xlab_text_size}{numeric}
 
 \item{ylab_text_size}{numeric}
+
+\item{xtitle_text_size}{numeric}
+
+\item{ytitle_text_size}{numeric}
+
+\item{legend_title_size}{numeric}
+
+\item{legend_text_size}{numeric}
 
 \item{geom_tile_color}{character}
 }

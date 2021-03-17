@@ -1,5 +1,5 @@
 globalVariables(
-  c("aes", ".data")
+  c(".data")
 )
 
 #' rawutil

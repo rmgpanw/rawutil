@@ -25,6 +25,10 @@
 #' @param ylab_text_angle numeric
 #' @param xlab_text_size numeric
 #' @param ylab_text_size numeric
+#' @param xtitle_text_size numeric
+#' @param ytitle_text_size numeric
+#' @param legend_title_size numeric
+#' @param legend_text_size numeric
 #' @param geom_tile_color character
 #'
 #' @return ggplot object
@@ -44,10 +48,19 @@ plot_heatmap <- function(df,
                          ylab_text_angle = 0,
                          xlab_text_size = NULL,
                          ylab_text_size = NULL,
+                         xtitle_text_size = NULL,
+                         ytitle_text_size = NULL,
+                         legend_title_size = NULL,
+                         legend_text_size = NULL,
                          geom_tile_color = "white") {
 
   # order and filter x/y axes, if specified
   if (!is.null(x_order)) {
+    # error if no common items
+    if (all(!x_order %in% df[[x]])) {
+      stop("all values in x_order are not present in df[[x]]")
+    }
+
     # warning if any items in x_order or NOT in df[[x]]
     if (any(!x_order %in% df[[x]])) {
       warning("x_order contains values that are not present in df[[x]]")
@@ -62,6 +75,11 @@ plot_heatmap <- function(df,
   }
 
   if (!is.null(y_order)) {
+    # error if no common items
+    if (all(!y_order %in% df[[y]])) {
+      stop("all values in y_order are not present in df[[x]]")
+    }
+
     # warning if any items in x_order or NOT in df[[x]]
     if (any(!y_order %in% df[[y]])) {
       warning("y_order contains values that are not present in df[[y]]")
@@ -92,6 +110,10 @@ plot_heatmap <- function(df,
       axis.text.y = ggplot2::element_text(angle = ylab_text_angle, size = ylab_text_size),
       axis.ticks.x = ggplot2::element_blank(),
       axis.ticks.y = ggplot2::element_blank(),
+      axis.title.x = ggplot2::element_text(size = xtitle_text_size),
+      axis.title.y = ggplot2::element_text(size = ytitle_text_size),
+      legend.title = ggplot2::element_text(size = legend_title_size),
+      legend.text = ggplot2::element_text(size = legend_text_size),
     ) +
 
     # make tiles square
@@ -103,7 +125,7 @@ plot_heatmap <- function(df,
 
   # annotate tiles - TODO warning if only one of these is specified?
   if (!is.null(label) & !is.null(label_size)) {
-    heatmap <- heatmap + geom_text(aes(label = .data[[label]]),
+    heatmap <- heatmap + ggplot2::geom_text(ggplot2::aes(label = .data[[label]]),
                                    size = label_size)
   }
 
