@@ -118,15 +118,15 @@ plot_heatmap <- function(df,
       legend.text = ggplot2::element_text(size = legend_text_size),
     ) +
 
-    # make tiles square
-    ggplot2::coord_equal()
+    # remove grey border around heatmap plot
+    ggplot2::scale_x_discrete(expand = c(0, 0)) +
+    ggplot2::scale_y_discrete(expand = c(0, 0))
 
-  # remove grey border around heatmap plot - this makes a big grey border if
+
+  # make tiles square - this makes a big grey border if
   # using plotly::ggplotly though
   if (!plotly_plot) {
-    heatmap <- heatmap +
-      ggplot2::scale_x_discrete(expand = c(0, 0)) +
-      ggplot2::scale_y_discrete(expand = c(0, 0))
+    heatmap <- heatmap + ggplot2::coord_equal()
   }
 
   # annotate tiles
