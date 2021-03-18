@@ -56,7 +56,6 @@ plot_heatmap <- function(df,
                          legend_text_size = NULL,
                          geom_tile_color = "white",
                          plotly_plot = FALSE) {
-
   # order and filter x/y axes, if specified
   if (!is.null(x_order)) {
     # error if no common items
@@ -122,13 +121,13 @@ plot_heatmap <- function(df,
     # make tiles square
     ggplot2::coord_equal()
 
-    # remove grey border around heatmap plot - this makes a big grey border if
-    # using plotly::ggplotly though
-    if (!plotly_plot) {
-      heatmap <- heatmap +
-    ggplot2::scale_x_discrete(expand = c(0, 0)) +
-    ggplot2::scale_y_discrete(expand = c(0, 0))
-    }
+  # remove grey border around heatmap plot - this makes a big grey border if
+  # using plotly::ggplotly though
+  if (!plotly_plot) {
+    heatmap <- heatmap +
+      ggplot2::scale_x_discrete(expand = c(0, 0)) +
+      ggplot2::scale_y_discrete(expand = c(0, 0))
+  }
 
   # annotate tiles
   # warning if only one of these is specified
@@ -137,7 +136,8 @@ plot_heatmap <- function(df,
   # }
 
   if (!is.null(label)) {
-    heatmap <- heatmap + ggplot2::geom_text(ggplot2::aes(label = .data[[label]]),
+    heatmap <-
+      heatmap + ggplot2::geom_text(ggplot2::aes(label = .data[[label]]),
                                    size = label_size)
   }
 
