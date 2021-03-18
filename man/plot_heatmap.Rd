@@ -10,7 +10,7 @@ plot_heatmap(
   y,
   fill,
   label = NULL,
-  label_size = NULL,
+  label_size = TRUE,
   x_order = NULL,
   y_order = NULL,
   xlab = "x title",

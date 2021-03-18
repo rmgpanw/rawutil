@@ -38,7 +38,7 @@ plot_heatmap <- function(df,
                          y,
                          fill,
                          label = NULL,
-                         label_size = NULL,
+                         label_size = TRUE,
                          x_order = NULL,
                          y_order = NULL,
                          xlab = "x title",
@@ -123,8 +123,13 @@ plot_heatmap <- function(df,
     ggplot2::scale_x_discrete(expand = c(0, 0)) +
     ggplot2::scale_y_discrete(expand = c(0, 0))
 
-  # annotate tiles - TODO warning if only one of these is specified?
-  if (!is.null(label) & !is.null(label_size)) {
+  # annotate tiles
+  # warning if only one of these is specified
+  # if (sum(is.null(label), is.null(label_size)) == 1) {
+  #   warning("To annotate heatmap tiles, BOTH 'label' and 'label_size' arguments must be specified. No annotations will be produced in this plot")
+  # }
+
+  if (!is.null(label)) {
     heatmap <- heatmap + ggplot2::geom_text(ggplot2::aes(label = .data[[label]]),
                                    size = label_size)
   }
