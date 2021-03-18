@@ -120,11 +120,12 @@ plot_heatmap <- function(df,
     ) +
 
     # make tiles square
-    ggplot2::coord_equal() +
+    ggplot2::coord_equal()
 
     # remove grey border around heatmap plot - this makes a big grey border if
     # using plotly::ggplotly though
     if (!plotly_plot) {
+      heatmap <- heatmap +
     ggplot2::scale_x_discrete(expand = c(0, 0)) +
     ggplot2::scale_y_discrete(expand = c(0, 0))
     }
