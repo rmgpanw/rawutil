@@ -8,7 +8,7 @@
 
 #' Plot a heatmap
 #'
-#' Plots a heatmap using geom_tile()
+#' Plots a heatmap using \code{\link[ggplot2]{geom_tile}}
 #'
 #' @param df df
 #' @param x character
@@ -30,6 +30,8 @@
 #' @param legend_title_size numeric
 #' @param legend_text_size numeric
 #' @param geom_tile_color character
+#' @param plotly_plot logical. Set as \code{TRUE} if wrapping this plot with
+#'   \code{\link[plotly]{ggplotly}}. Default is \code{FALSE}.
 #'
 #' @return ggplot object
 #' @export
@@ -52,7 +54,8 @@ plot_heatmap <- function(df,
                          ytitle_text_size = NULL,
                          legend_title_size = NULL,
                          legend_text_size = NULL,
-                         geom_tile_color = "white") {
+                         geom_tile_color = "white",
+                         plotly_plot = FALSE) {
 
   # order and filter x/y axes, if specified
   if (!is.null(x_order)) {
@@ -119,9 +122,12 @@ plot_heatmap <- function(df,
     # make tiles square
     ggplot2::coord_equal() +
 
-    # remove grey border around heatmap plot
+    # remove grey border around heatmap plot - this makes a big grey border if
+    # using plotly::ggplotly though
+    if (!plotly_plot) {
     ggplot2::scale_x_discrete(expand = c(0, 0)) +
     ggplot2::scale_y_discrete(expand = c(0, 0))
+    }
 
   # annotate tiles
   # warning if only one of these is specified
