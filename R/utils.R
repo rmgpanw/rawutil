@@ -42,7 +42,8 @@ time_taken_message <- function(start_time) {
 #'
 #' Similar idea to
 #' \href{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html}{pandas.replace
-#' method} using a dictionary for the \code{value} argument. \strong{Note:} only works with columns that are of type numeric (including integer) or character.
+#' method} using a dictionary for the \code{value} argument. \strong{Note:} only
+#' works with columns that are of type numeric (including integer) or character.
 #'
 #' @param df dataframe.
 #' @param colname character. Name of column to be relabelled

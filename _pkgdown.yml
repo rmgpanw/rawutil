@@ -3,6 +3,7 @@ reference:
   desc: Process a (large) file of tabular data in chunks
 - contents:
   - fread_chunked
+  - process_df_chunked
 
 - title: Summarise
   desc:  Generate quick summaries for tabular data
@@ -29,6 +30,11 @@ reference:
   desc: Functions to generate dummy data for experimenting with
 - contents:
   - make_dummy_df
+
+- title: Private functions
+  desc: Helpers
+- contents:
+  - assert_integer_ge_1
 
 - title: Package overview
   desc: General summary of package contents

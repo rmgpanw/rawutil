@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Revalue values in a dataframe column — revalue_col • rawutil</title>
+<title>Assert number is an integer that is greater than or equal to 1 — assert_integer_ge_1 • rawutil</title>
 
 
 <!-- jquery -->
@@ -39,11 +39,9 @@
 
 
 
-<meta property="og:title" content="Revalue values in a dataframe column — revalue_col" />
-<meta property="og:description" content="Similar idea to
-pandas.replace
-method using a dictionary for the value argument. Note: only
-works with columns that are of type numeric (including integer) or character." />
+<meta property="og:title" content="Assert number is an integer that is greater than or equal to 1 — assert_integer_ge_1" />
+<meta property="og:description" content="Helper function for fread_chunked and
+process_df_chunked." />
 
 
 
@@ -106,50 +104,35 @@ works with columns that are of type numeric (including integer) or character." /
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Revalue values in a dataframe column</h1>
+    <h1>Assert number is an integer that is greater than or equal to 1</h1>
     
-    <div class="hidden name"><code>revalue_col.Rd</code></div>
+    <div class="hidden name"><code>assert_integer_ge_1.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Similar idea to
-<a href='https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html'>pandas.replace
-method</a> using a dictionary for the <code>value</code> argument. <strong>Note:</strong> only
-works with columns that are of type numeric (including integer) or character.</p>
+    <p>Helper function for <code><a href='fread_chunked.html'>fread_chunked</a></code> and
+<code><a href='process_df_chunked.html'>process_df_chunked</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>revalue_col</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>colname</span>, <span class='va'>dict</span>, default_value <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>assert_integer_ge_1</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>arg_name</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>df</th>
-      <td><p>dataframe.</p></td>
+      <th>x</th>
+      <td><p>An integer &gt;= 1. Raises an error if this condition is not met</p></td>
     </tr>
     <tr>
-      <th>colname</th>
-      <td><p>character. Name of column to be relabelled</p></td>
-    </tr>
-    <tr>
-      <th>dict</th>
-      <td><p>a named vector. <code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code> are the 'keys' i.e. the
-existing values in <code>df[[colname]]</code> to be replaced. These should be
-unique. An error is raised if non-unique values are found in
-<code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code></p></td>
-    </tr>
-    <tr>
-      <th>default_value</th>
-      <td><p>default value to use for values in <code>df[[colname]]</code>
-that are not present in <code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code>. By default this is <code>NULL</code>,
-meaning that values not present in <code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code> will remain
-unchanged.</p></td>
+      <th>arg_name</th>
+      <td><p>character. The argument name for x. This is used to generate
+an informative error message.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>dataframe</p>
+    <div class='dont-index'><p><code><a href='fread_chunked.html'>fread_chunked</a></code>, <code><a href='process_df_chunked.html'>process_df_chunked</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

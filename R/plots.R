@@ -8,7 +8,9 @@
 
 #' Plot a heatmap
 #'
-#' Plots a heatmap using \code{\link[ggplot2]{geom_tile}}
+#' Plots a heatmap using \code{\link[ggplot2]{geom_tile}}.
+#'
+#' TODO: read this \href{https://jcoliver.github.io/learn-r/006-heatmaps.html}{blogpost}
 #'
 #' @param df df
 #' @param x character

@@ -76,5 +76,8 @@ plot_heatmap(
 ggplot object
 }
 \description{
-Plots a heatmap using \code{\link[ggplot2]{geom_tile}}
+Plots a heatmap using \code{\link[ggplot2]{geom_tile}}.
+}
+\details{
+TODO: read this \href{https://jcoliver.github.io/learn-r/006-heatmaps.html}{blogpost}
 }
