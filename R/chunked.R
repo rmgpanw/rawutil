@@ -21,7 +21,8 @@
 #'
 #' Works like \code{\link[readr]{read_delim_chunked}}, but is built on
 #' \code{\link[data.table]{fread}}. An advantage is that it is simpler to
-#' programmatically read a selection of columns.
+#' programmatically read a selection of columns. However, it is \emph{much}
+#' slower.
 #'
 #' @param return_chunks bool. Save chunks and return as a single combined data
 #'   frame when function completes. Default is \code{FALSE}.
@@ -201,8 +202,8 @@ fread_chunked <- function(file,
 
 #' Apply a function to a data frame in chunks
 #'
-#' May be helpful if applying \code{\link[tidyr]{pivot_longer}} to a large
-#' dataframe where many of the values are \code{NA} and these are to be removed.
+#' If applying a function to a data frame that take a long time, this function
+#' may help to estimate the total processing duration.
 #'
 #' @param df data frame
 #' @inheritParams fread_chunked
@@ -280,6 +281,7 @@ process_df_chunked <- function(df,
 #'   an informative error message.
 #'
 #' @seealso \code{\link{fread_chunked}}, \code{\link{process_df_chunked}}
+#' @noRd
 assert_integer_ge_1 <- function(x, arg_name) {
   # custom error message
   error_message <- paste("Error!", arg_name, "must be an integer that is greater than 0")
