@@ -111,5 +111,6 @@ frame when function completes. Default is \code{FALSE}.}
 \description{
 Works like \code{\link[readr]{read_delim_chunked}}, but is built on
 \code{\link[data.table]{fread}}. An advantage is that it is simpler to
-programmatically read a selection of columns.
+programmatically read a selection of columns. However, it is \emph{much}
+slower.
 }

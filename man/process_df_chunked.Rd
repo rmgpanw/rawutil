@@ -22,6 +22,6 @@ each chunk is processed.}
 a dataframe
 }
 \description{
-May be helpful if applying \code{\link[tidyr]{pivot_longer}} to a large
-dataframe where many of the values are \code{NA} and these are to be removed.
+If applying a function to a data frame that take a long time, this function
+may help to estimate the total processing duration.
 }
