@@ -110,14 +110,14 @@ plot_heatmap <- function(df,
     # formatting
     # scale_fill_distiller(palette = palette) +
     ggplot2::theme(
-      axis.text.x = ggplot2::element_text(angle = xlab_text_angle, size = xlab_text_size),
-      axis.text.y = ggplot2::element_text(angle = ylab_text_angle, size = ylab_text_size),
+      axis.text.x = ggtext::element_markdown(angle = xlab_text_angle, size = xlab_text_size),
+      axis.text.y = ggtext::element_markdown(angle = ylab_text_angle, size = ylab_text_size),
       axis.ticks.x = ggplot2::element_blank(),
       axis.ticks.y = ggplot2::element_blank(),
-      axis.title.x = ggplot2::element_text(size = xtitle_text_size),
-      axis.title.y = ggplot2::element_text(size = ytitle_text_size),
-      legend.title = ggplot2::element_text(size = legend_title_size),
-      legend.text = ggplot2::element_text(size = legend_text_size),
+      axis.title.x = ggtext::element_markdown(size = xtitle_text_size),
+      axis.title.y = ggtext::element_markdown(size = ytitle_text_size),
+      legend.title = ggtext::element_markdown(size = legend_title_size),
+      legend.text = ggtext::element_markdown(size = legend_text_size),
     ) +
 
     # remove grey border around heatmap plot
