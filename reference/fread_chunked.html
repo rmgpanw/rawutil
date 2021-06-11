@@ -42,7 +42,8 @@
 <meta property="og:title" content="Read and (optionally) process a file in chunks — fread_chunked" />
 <meta property="og:description" content="Works like read_delim_chunked, but is built on
 fread. An advantage is that it is simpler to
-programmatically read a selection of columns." />
+programmatically read a selection of columns. However, it is much
+slower." />
 
 
 
@@ -113,7 +114,8 @@ programmatically read a selection of columns." />
     <div class="ref-description">
     <p>Works like <code><a href='https://readr.tidyverse.org/reference/read_delim_chunked.html'>read_delim_chunked</a></code>, but is built on
 <code><a href='https://Rdatatable.gitlab.io/data.table/reference/fread.html'>fread</a></code>. An advantage is that it is simpler to
-programmatically read a selection of columns.</p>
+programmatically read a selection of columns. However, it is <em>much</em>
+slower.</p>
     </div>
 
     <pre class="usage"><span class='fu'>fread_chunked</span><span class='op'>(</span>
