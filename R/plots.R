@@ -121,8 +121,7 @@ plot_heatmap <- function(df,
     ) +
 
     # remove grey border around heatmap plot
-    ggplot2::scale_x_discrete(expand = c(0, 0),
-                              position = "top") +
+    ggplot2::scale_x_discrete(expand = c(0, 0)) +
     ggplot2::scale_y_discrete(expand = c(0, 0))
 
 
