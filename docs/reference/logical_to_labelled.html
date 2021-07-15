@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Revalue values in a dataframe column — revalue_col • rawutil</title>
+<title>Convert columns of type logical to numeric labelled 'yes'/'no' — logical_to_labelled • rawutil</title>
 
 
 <!-- jquery -->
@@ -39,11 +39,9 @@
 
 
 
-<meta property="og:title" content="Revalue values in a dataframe column — revalue_col" />
-<meta property="og:description" content="Similar idea to
-pandas.replace
-method using a dictionary for the value argument. Note: only
-works with columns that are of type numeric (including integer) or character." />
+<meta property="og:title" content="Convert columns of type logical to numeric labelled 'yes'/'no' — logical_to_labelled" />
+<meta property="og:description" content="Values in logical columns are converted from TRUE/FALSE to
+1/2, with labels 'Yes'/'No'." />
 
 
 
@@ -106,57 +104,35 @@ works with columns that are of type numeric (including integer) or character." /
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Revalue values in a dataframe column</h1>
+    <h1>Convert columns of type logical to numeric labelled 'yes'/'no'</h1>
     
-    <div class="hidden name"><code>revalue_col.Rd</code></div>
+    <div class="hidden name"><code>logical_to_labelled.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Similar idea to
-<a href='https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html'>pandas.replace
-method</a> using a dictionary for the <code>value</code> argument. <strong>Note:</strong> only
-works with columns that are of type numeric (including integer) or character.</p>
+    <p>Values in logical columns are converted from <code>TRUE</code>/<code>FALSE</code> to
+<code>1</code>/<code>2</code>, with labels 'Yes'/'No'.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>revalue_col</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>colname</span>, <span class='va'>dict</span>, default_value <span class='op'>=</span> <span class='cn'>NULL</span>, suppress_warnings <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>logical_to_labelled</span><span class='op'>(</span><span class='va'>df</span>, selected_cols <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>df</th>
-      <td><p>dataframe.</p></td>
+      <td><p>data frame</p></td>
     </tr>
     <tr>
-      <th>colname</th>
-      <td><p>character. Name of column to be relabelled</p></td>
-    </tr>
-    <tr>
-      <th>dict</th>
-      <td><p>a named vector. <code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code> are the 'keys' i.e. the
-existing values in <code>df[[colname]]</code> to be replaced. These should be
-unique. An error is raised if non-unique values are found in
-<code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code></p></td>
-    </tr>
-    <tr>
-      <th>default_value</th>
-      <td><p>default value to use for values in <code>df[[colname]]</code>
-that are not present in <code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code>. By default this is <code>NULL</code>,
-meaning that values not present in <code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code> will remain
-unchanged.</p></td>
-    </tr>
-    <tr>
-      <th>suppress_warnings</th>
-      <td><p>bool. A warning is raised if the column to be
-relabelled contains values not present in <code>dict</code>. This message is
-silenced if <code>suppress_warnings</code> is <code>TRUE</code>. Default value is
-<code>FALSE</code>.</p></td>
+      <th>selected_cols</th>
+      <td><p>character. A vector of selected column names to convert
+to labelled numeric. These should all be of type logical.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>dataframe</p>
+    <p>A data frame</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

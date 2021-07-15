@@ -31,6 +31,11 @@ reference:
 - contents:
   - make_dummy_df
 
+- title: Labelled data
+  desc: Functions for labelling/relabelling data
+- contents:
+  - logical_to_labelled
+
 - title: Private functions
   desc: Helpers
 - contents:

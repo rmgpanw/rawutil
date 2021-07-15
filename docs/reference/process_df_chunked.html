@@ -40,8 +40,8 @@
 
 
 <meta property="og:title" content="Apply a function to a data frame in chunks — process_df_chunked" />
-<meta property="og:description" content="May be helpful if applying pivot_longer to a large
-dataframe where many of the values are NA and these are to be removed." />
+<meta property="og:description" content="If applying a function to a data frame that take a long time, this function
+may help to estimate the total processing duration." />
 
 
 
@@ -110,8 +110,8 @@ dataframe where many of the values are NA and these are to be removed." />
     </div>
 
     <div class="ref-description">
-    <p>May be helpful if applying <code><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></code> to a large
-dataframe where many of the values are <code>NA</code> and these are to be removed.</p>
+    <p>If applying a function to a data frame that take a long time, this function
+may help to estimate the total processing duration.</p>
     </div>
 
     <pre class="usage"><span class='fu'>process_df_chunked</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>callback</span>, chunk_size <span class='op'>=</span> <span class='fl'>100</span>, progress <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span></pre>

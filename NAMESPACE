@@ -2,6 +2,7 @@
 
 export(calc_interaction_pvalues)
 export(fread_chunked)
+export(logical_to_labelled)
 export(make_dummy_df)
 export(my_skim)
 export(plot_heatmap)

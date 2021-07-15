@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Revalue values in a dataframe column — revalue_col • rawutil</title>
+<title>Revalue values in a vector — revalue_vector • rawutil</title>
 
 
 <!-- jquery -->
@@ -39,11 +39,11 @@
 
 
 
-<meta property="og:title" content="Revalue values in a dataframe column — revalue_col" />
+<meta property="og:title" content="Revalue values in a vector — revalue_vector" />
 <meta property="og:description" content="Similar idea to
 pandas.replace
 method using a dictionary for the value argument. Note: only
-works with columns that are of type numeric (including integer) or character." />
+works with vectors that are of type numeric (including integer) or character." />
 
 
 
@@ -106,29 +106,25 @@ works with columns that are of type numeric (including integer) or character." /
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Revalue values in a dataframe column</h1>
+    <h1>Revalue values in a vector</h1>
     
-    <div class="hidden name"><code>revalue_col.Rd</code></div>
+    <div class="hidden name"><code>revalue_vector.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>Similar idea to
 <a href='https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html'>pandas.replace
 method</a> using a dictionary for the <code>value</code> argument. <strong>Note:</strong> only
-works with columns that are of type numeric (including integer) or character.</p>
+works with vectors that are of type numeric (including integer) or character.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>revalue_col</span><span class='op'>(</span><span class='va'>df</span>, <span class='va'>colname</span>, <span class='va'>dict</span>, default_value <span class='op'>=</span> <span class='cn'>NULL</span>, suppress_warnings <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>revalue_vector</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>dict</span>, default_value <span class='op'>=</span> <span class='cn'>NULL</span>, suppress_warnings <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>df</th>
-      <td><p>dataframe.</p></td>
-    </tr>
-    <tr>
-      <th>colname</th>
+      <th>x</th>
       <td><p>character. Name of column to be relabelled</p></td>
     </tr>
     <tr>
@@ -156,7 +152,7 @@ silenced if <code>suppress_warnings</code> is <code>TRUE</code>. Default value i
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>dataframe</p>
+    <p>A relabelled vector.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
