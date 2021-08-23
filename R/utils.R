@@ -197,3 +197,23 @@ revalue_col <-
   }
 
 # PRIVATE FUNCTIONS -------------------------------------------------------
+
+#' Assert number is an integer that is greater than or equal to 1
+#'
+#' Helper function for \code{\link{fread_chunked}} and
+#' \code{\link{process_df_chunked}}.
+#'
+#' @param x An integer >= 1. Raises an error if this condition is not met
+#' @param arg_name character. The argument name for x. This is used to generate
+#'   an informative error message.
+#'
+#' @seealso \code{\link{fread_chunked}}, \code{\link{process_df_chunked}}
+assert_integer_ge_1 <- function(x, arg_name) {
+  # custom error message
+  error_message <- paste("Error!", arg_name, "must be an integer that is greater than 0")
+
+  # assertion
+  assertthat::assert_that(x >= 1,
+                          rlang::is_integerish(x),
+                          msg = error_message)
+}
