@@ -240,7 +240,7 @@ print_df_as_call_to_tibble <- function(df) {
                ),
                "),\n") |>
           # for NA values in character columns, convert 'NA' to NA
-          stringr::str_replace_all(pattern = "\\s'NA',\\s",
+          stringr::str_replace_all(pattern = "'NA',?",
                                    replacement = " NA, "))
   }
 }
