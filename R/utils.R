@@ -196,6 +196,63 @@ revalue_col <-
     return(df)
   }
 
+#' Print a data frame to the console for copying and pasting to a call to \code{tibble()}
+#'
+#' Convenience function
+#'
+#' @param df A data frame
+#'
+#' @return NULL.
+#' @export
+#'
+#' @examples
+#' print_df_as_call_to_tibble(head(iris))
+print_df_as_call_to_tibble <- function(df) {
+  for (col_name in names(df)) {
+    # is this column a character or factor?
+    is_character_or_factor <- is.character(df[[col_name]]) |
+      is.factor(df[[col_name]])
+
+    if (is_character_or_factor) {
+      collapse <- "', '"
+    } else {
+      collapse <- ", "
+    }
+
+    # make type character
+    df[[col_name]] <- as.character(df[[col_name]])
+
+    # replace
+    df[[col_name]][is.na(df[[col_name]])] <- "NA"
+
+    cat(paste0(col_name,
+               " = c(",
+               paste0(
+                 if (is_character_or_factor) {
+                   "'"
+                 },
+                 stringr::str_c(df[[col_name]],
+                                sep = "",
+                                collapse = collapse),
+                 if (is_character_or_factor) {
+                   "'"
+                 }
+               ),
+               "),\n") |>
+          # for NA values in character columns, convert 'NA' to NA
+          stringr::str_replace_all(pattern = "\\s'NA',\\s",
+                                   replacement = " NA, "))
+  }
+}
+
+iris3 <- tibble::tibble(
+  Sepal.Length = c(5.1, 4.9, 4.7, 4.6, 5, 5.4),
+  Sepal.Width = c(NA, 34, NA, NA, NA, NA),
+  Petal.Length = c(1.4, 1.4, 1.3, 1.5, 1.4, 1.7),
+  Petal.Width = c(0.2, 0.2, 0.2, 0.2, 0.2, 0.4),
+  Species = c('setosa', 'setosa', NA, 'setosa', 'setosa', 'setosa'),
+)
+
 # PRIVATE FUNCTIONS -------------------------------------------------------
 
 #' Assert number is an integer that is greater than or equal to 1
