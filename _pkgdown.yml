@@ -16,6 +16,7 @@ reference:
   - time_taken_message
   - revalue_col
   - revalue_vector
+  - print_df_as_call_to_tibble
 
 - title: Plots
   desc: Plotting functions
