@@ -138,16 +138,16 @@ works with columns that are of type numeric (including integer) or character.</p
     </tr>
     <tr>
       <th>dict</th>
-      <td><p>a named vector. <code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code> are the 'keys' i.e. the
+      <td><p>a named vector. <code>names(dict)</code> are the 'keys' i.e. the
 existing values in <code>df[[colname]]</code> to be replaced. These should be
 unique. An error is raised if non-unique values are found in
-<code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code></p></td>
+<code>names(dict)</code></p></td>
     </tr>
     <tr>
       <th>default_value</th>
       <td><p>default value to use for values in <code>df[[colname]]</code>
-that are not present in <code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code>. By default this is <code>NULL</code>,
-meaning that values not present in <code><a href='https://rdrr.io/r/base/names.html'>names(dict)</a></code> will remain
+that are not present in <code>names(dict)</code>. By default this is <code>NULL</code>,
+meaning that values not present in <code>names(dict)</code> will remain
 unchanged.</p></td>
     </tr>
     <tr>

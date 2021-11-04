@@ -125,21 +125,23 @@
     <p>df</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>make_dummy_df</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    chr int  fac   log chr_rpt
-#&gt; 1    a   1    a  TRUE       a
-#&gt; 2    b   2    b  TRUE       a
-#&gt; 3    c   3    c  TRUE       a
-#&gt; 4    d   4    d  TRUE       c
-#&gt; 5    e   5    e  TRUE       c
-#&gt; 6 &lt;NA&gt;  NA &lt;NA&gt; FALSE       c</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>make_dummy_df</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; 'data.frame':	6 obs. of  5 variables:
-#&gt;  $ chr    : chr  "a" "b" "c" "d" ...
-#&gt;  $ int    : int  1 2 3 4 5 NA
-#&gt;  $ fac    : Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5 NA
-#&gt;  $ log    : logi  TRUE TRUE TRUE TRUE TRUE FALSE
-#&gt;  $ chr_rpt: chr  "a" "a" "a" "c" ...</div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>make_dummy_df</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    chr int  fac   log chr_rpt</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1    a   1    a  TRUE       a</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2    b   2    b  TRUE       a</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3    c   3    c  TRUE       a</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 4    d   4    d  TRUE       c</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 5    e   5    e  TRUE       c</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 6 &lt;NA&gt;  NA &lt;NA&gt; FALSE       c</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='fu'>make_dummy_df</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 'data.frame':	6 obs. of  5 variables:</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ chr    : chr  "a" "b" "c" "d" ...</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ int    : int  1 2 3 4 5 NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ fac    : Factor w/ 5 levels "a","b","c","d",..: 1 2 3 4 5 NA</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ log    : logi  TRUE TRUE TRUE TRUE TRUE FALSE</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  $ chr_rpt: chr  "a" "a" "a" "c" ...</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
