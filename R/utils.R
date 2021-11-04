@@ -245,14 +245,6 @@ print_df_as_call_to_tibble <- function(df) {
   }
 }
 
-iris3 <- tibble::tibble(
-  Sepal.Length = c(5.1, 4.9, 4.7, 4.6, 5, 5.4),
-  Sepal.Width = c(NA, 34, NA, NA, NA, NA),
-  Petal.Length = c(1.4, 1.4, 1.3, 1.5, 1.4, 1.7),
-  Petal.Width = c(0.2, 0.2, 0.2, 0.2, 0.2, 0.4),
-  Species = c('setosa', 'setosa', NA, 'setosa', 'setosa', 'setosa'),
-)
-
 # PRIVATE FUNCTIONS -------------------------------------------------------
 
 #' Assert number is an integer that is greater than or equal to 1
