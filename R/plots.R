@@ -34,6 +34,10 @@
 #' @param geom_tile_color character
 #' @param plotly_plot logical. Set as \code{TRUE} if wrapping this plot with
 #'   \code{\link[plotly]{ggplotly}}. Default is \code{FALSE}.
+#' @param xhjust numeric
+#' @param xvjust numeric
+#' @param yhjust numeric
+#' @param yvjust numeric
 #'
 #' @return ggplot object
 #' @export

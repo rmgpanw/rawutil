@@ -63,6 +63,14 @@ plot_heatmap(
 
 \item{ylab_text_size}{numeric}
 
+\item{xhjust}{numeric}
+
+\item{xvjust}{numeric}
+
+\item{yhjust}{numeric}
+
+\item{yvjust}{numeric}
+
 \item{xtitle_text_size}{numeric}
 
 \item{ytitle_text_size}{numeric}
