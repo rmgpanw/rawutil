@@ -38,6 +38,8 @@
 #' @param xvjust numeric
 #' @param yhjust numeric
 #' @param yvjust numeric
+#' @param lwd numeric. geom_tile line width
+#' @param linetype numeric. geom_tile line type
 #'
 #' @return ggplot object
 #' @export
@@ -65,7 +67,9 @@ plot_heatmap <- function(df,
                          legend_title_size = NULL,
                          legend_text_size = NULL,
                          geom_tile_color = "white",
-                         plotly_plot = FALSE) {
+                         plotly_plot = FALSE,
+                         lwd = 1.5,
+                         linetype = 1) {
   # order and filter x/y axes, if specified
   if (!is.null(x_order)) {
     # error if no common items
@@ -108,7 +112,7 @@ plot_heatmap <- function(df,
   # plot
   heatmap <- df %>%
     ggplot2::ggplot(ggplot2::aes(x = .data[[x]], y = .data[[y]], fill = .data[[fill]])) +
-    ggplot2::geom_tile(color = geom_tile_color) +
+    ggplot2::geom_tile(color = geom_tile_color, lwd = lwd, linetype = linetype) +
 
     # axis and legend labels
     ggplot2::xlab(xlab) +
