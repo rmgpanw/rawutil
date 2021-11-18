@@ -68,7 +68,7 @@ plot_heatmap <- function(df,
                          legend_text_size = NULL,
                          geom_tile_color = "white",
                          plotly_plot = FALSE,
-                         lwd = 1.5,
+                         lwd = 0.5,
                          linetype = 1) {
   # order and filter x/y axes, if specified
   if (!is.null(x_order)) {
