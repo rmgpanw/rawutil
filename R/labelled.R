@@ -51,3 +51,70 @@ logical_to_labelled <- function(df, selected_cols = NULL) {
   # return result
   return(result)
 }
+
+#' Update variable labels - replace a string for all variable labels.
+#'
+#' @param df A data frame
+#' @inheritParams stringr::str_replace_all
+#'
+#' @return A data frame
+#' @export
+#'
+#' @family Labelled data utility functions
+str_replace_all_var_labels <- function(df,
+                                       pattern,
+                                       replacement) {
+  for (variable in names(df)) {
+    if (!is.null(attributes(df[[variable]])$label)) {
+      attributes(df[[variable]])$label <- stringr::str_replace_all(
+        string = attributes(df[[variable]])$label,
+        pattern = pattern,
+        replacement = replacement
+      )
+    }
+  }
+
+  return(df)
+}
+
+#' Update variable labels - remove a string from all variable labels
+#'
+#' @param df A data frame
+#' @inheritParams stringr::str_remove
+#'
+#' @return A data frame
+#' @export
+#'
+#' @family Labelled data utility functions
+str_remove_from_var_labels <- function(df,
+                                       pattern = "\\s\\(f[:digit:]+.*\\)$") {
+  for (variable in names(df)) {
+    if (!is.null(attributes(df[[variable]])$label)) {
+      attributes(df[[variable]])$label <-
+        stringr::str_remove(string = attributes(df[[variable]])$label,
+                            pattern = pattern)
+    }
+  }
+
+  return(df)
+}
+
+#' Update variable labels - capitalise the first letter
+#'
+#' @param df A data frame
+#'
+#' @return A data frame
+#' @export
+#'
+#' @family Labelled data utility functions
+capitalise_first_letter_var_labels <- function(df) {
+  for (variable in names(df)) {
+    if (!is.null(attributes(df[[variable]])$label)) {
+      substr(attributes(df[[variable]])$label, 1, 1) <-
+        toupper(substr(attributes(df[[variable]])$label, 1, 1))
+    }
+  }
+
+  return(df)
+}
+

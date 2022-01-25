@@ -29,7 +29,9 @@ plot_heatmap(
   legend_title_size = NULL,
   legend_text_size = NULL,
   geom_tile_color = "white",
-  plotly_plot = FALSE
+  plotly_plot = FALSE,
+  lwd = 0.5,
+  linetype = 1
 )
 }
 \arguments{
@@ -83,6 +85,10 @@ plot_heatmap(
 
 \item{plotly_plot}{logical. Set as \code{TRUE} if wrapping this plot with
 \code{\link[plotly]{ggplotly}}. Default is \code{FALSE}.}
+
+\item{lwd}{numeric. geom_tile line width}
+
+\item{linetype}{numeric. geom_tile line type}
 }
 \value{
 ggplot object
