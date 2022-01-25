@@ -37,6 +37,9 @@ reference:
   desc: Functions for labelling/relabelling data
 - contents:
   - logical_to_labelled
+  - str_replace_all_var_labels
+  - str_remove_from_var_labels
+  - capitalise_first_letter_var_labels
 
 - title: Private functions
   desc: Helpers
