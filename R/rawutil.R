@@ -1,5 +1,5 @@
 globalVariables(
-  c(".data")
+  c(".data", ".SD")
 )
 
 #' rawutil
@@ -8,4 +8,5 @@ globalVariables(
 #' @docType package
 #' @name rawutil
 #' @importFrom magrittr "%>%"
+#' @importFrom data.table ":="
 NULL

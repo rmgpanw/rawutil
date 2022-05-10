@@ -17,7 +17,8 @@
 #' \code{skimr::skim()} function to include proportion counts for factor
 #' variables
 #'
-#' In general, more informative results are returned if character-type columns are first converted to factors (see examples below)
+#' In general, more informative results are returned if character-type columns
+#' are first converted to factors (see examples below)
 #'
 #' @inheritParams skimr::skim
 #' @examples
@@ -36,35 +37,52 @@
 #'   my_skim()
 #'
 #' @export
-my_skim <- skimr::skim_with(
-  # factor - a long anonymous function that converts a prop table to a single string
-  factor = skimr::sfl(pct = function(x) {
-    # make a prop table in %
-    pct_table <- prop.table(table(x)) * 100
+my_skim <- function(data,
+                    ...,
+                    .data_name = NULL) {
+  custom_skim <- skimr::skim_with(
+    # factor - a long anonymous function that converts a prop table to a single string
+    factor = skimr::sfl(
+      pct = function(x) {
+        # make a prop table in %
+        pct_table <- prop.table(table(x)) * 100
 
-    # round % to 1dp
-    pct_table <- round(pct_table, 1)
+        # round % to 1dp
+        pct_table <- round(pct_table, 1)
 
-    # zip the table names and values together
-    combined_vector <- vector(mode = 'character', length = 0L)
-    for (i in 1:length(pct_table)) {
-      combined_vector <- c(combined_vector, paste0(names(pct_table)[i], ":"))
-      combined_vector <- c(combined_vector, paste0(as.character(pct_table)[i], "%,"))
-    }
+        # zip the table names and values together
+        combined_vector <- vector(mode = 'character', length = 0L)
+        for (i in 1:length(pct_table)) {
+          combined_vector <-
+            c(combined_vector, paste0(names(pct_table)[i], ":"))
+          combined_vector <-
+            c(combined_vector, paste0(as.character(pct_table)[i], "%,"))
+        }
 
-    # see result
-    combined_vector
+        # see result
+        combined_vector
 
-    # glue character vector into single string
-    combined_vector <- stringr::str_c(combined_vector, collapse = " ")
+        # glue character vector into single string
+        combined_vector <-
+          stringr::str_c(combined_vector, collapse = " ")
 
-    # return result
-    return(combined_vector)
-  }),
+        # return result
+        return(combined_vector)
+      }
+    ),
 
-  # logical - returns proportion = TRUE
-  logical = skimr::sfl(pct_TRUE = function(x) {sum(x == TRUE, na.rm=TRUE) / length(x) * 100})
-)
+    # logical - returns proportion = TRUE
+    logical = skimr::sfl(
+      pct_TRUE = function(x) {
+        sum(x == TRUE, na.rm = TRUE) / length(x) * 100
+      }
+    )
+  )
+
+  custom_skim(data = data,
+              .data_name = .data_name,
+              ...)
+}
 
 
 # PRIVATE FUNCTIONS -------------------------------------------------------

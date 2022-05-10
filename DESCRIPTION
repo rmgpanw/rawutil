@@ -23,15 +23,16 @@ Imports:
     haven,
     magrittr,
     purrr,
-    readr,
     rlang,
     skimr,
     stats,
     stringr,
-    tibble,
-    tidyr,
     tidyselect
 Suggests: 
     testthat (>= 3.0.0),
-    covr
+    covr,
+    plotly,
+    readr,
+    tibble,
+    tidyr
 Config/testthat/edition: 3

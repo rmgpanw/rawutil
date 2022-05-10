@@ -4,13 +4,15 @@
 \alias{my_skim}
 \title{Summarise a dataframe}
 \usage{
-my_skim(data, ...)
+my_skim(data, ..., .data_name = NULL)
 }
 \arguments{
 \item{data}{A tibble, or an object that can be coerced into a tibble.}
 
 \item{...}{Columns to select for skimming. When none are provided, the
 default is to skim all columns.}
+
+\item{.data_name}{The name to use for the data. Defaults to the same as data.}
 }
 \description{
 A tidyverse-friendly summary function that summarises a dataframe by column
@@ -22,7 +24,8 @@ Works with \code{dplyr::group_by()} and the pipe. See the
 \code{skimr::skim()} function to include proportion counts for factor
 variables
 
-In general, more informative results are returned if character-type columns are first converted to factors (see examples below)
+In general, more informative results are returned if character-type columns
+are first converted to factors (see examples below)
 }
 \examples{
 # summarise the iris dataset

@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/rmgpanw/rawutil/branch/main/graph/badge.svg)](https://codecov.io/gh/rmgpanw/rawutil?branch=main)
 <!-- badges: end -->
 
-This R package contains a collection of miscellaneous utility functions. Please see [package website](https://rmgpanw.github.io/rawutil/) for further information.
+This R package contains a collection of experimental functions and miscellaneous utility functions. Please see [package website](https://rmgpanw.github.io/rawutil/) for further information.
 
 ## Installation
 
