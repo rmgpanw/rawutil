@@ -17,21 +17,34 @@
 
 # EXPORTED FUNCTIONS ------------------------------------------------------
 
-#' Read and (optionally) process a file in chunks
+#' Read and process a file in chunks
 #'
-#' Works like \code{\link[readr]{read_delim_chunked}}, but is built on
-#' \code{\link[data.table]{fread}}. An advantage is that it is simpler to
-#' programmatically read a selection of columns. However, it is \emph{much}
-#' slower.
+#' Similar to `readr::read_delim_chunked()` but built on `data.table::fread()`.
+#' Reads large files in chunks to avoid memory limitations. While slower than
+#' `readr` functions, it provides more programmatic control over column selection.
 #'
-#' @param return_chunks bool. Save chunks and return as a single combined data
-#'   frame when function completes. Default is \code{FALSE}.
-#' @param progress bool. Display a progress message stating time taken after
-#'   each chunk is processed.
+#' **Key features:**
+#' - Memory-efficient processing of large files
+#' - Progress tracking with time estimates
+#' - Optional chunk aggregation and return
+#' - Built on fast `data.table::fread()`
+#'
+#' **Note:** This function is significantly slower than `readr::read_delim_chunked()`
+#' but offers greater flexibility for column selection.
+#'
+#' @param file **character**. Path to the input file.
+#' @param callback **function**. Function applied to each chunk. Should accept a
+#'   data frame as first argument.
+#' @param chunk_size **integer**. Number of rows to read per chunk. Default is 10,000.
+#' @param progress **logical**. Display progress messages with timing information.
+#'   Default is `TRUE`.
+#' @param return_chunks **logical**. If `TRUE`, combines all processed chunks and
+#'   returns as a single data frame. Default is `FALSE`.
+#' @param ... Additional arguments passed to the `callback` function.
 #' @inheritParams data.table::fread
-#' @inheritParams readr::read_delim_chunked
-#' @param ... additional arguments passed on to \code{callback} function.
 #'
+#' @return If `return_chunks = TRUE`, returns a combined data frame. Otherwise
+#'   returns `NULL` (used for side effects).
 #' @export
 fread_chunked <- function(file,
                           callback,
@@ -202,13 +215,24 @@ fread_chunked <- function(file,
 
 #' Apply a function to a data frame in chunks
 #'
-#' If applying a function to a data frame that take a long time, this function
-#' may help to estimate the total processing duration.
+#' Processes a data frame in smaller chunks to manage memory usage and provide
+#' progress tracking for long-running operations. Useful for applying computationally
+#' intensive functions to large datasets.
 #'
-#' @param df data frame
-#' @inheritParams fread_chunked
+#' **Benefits:**
+#' - Memory-efficient processing of large data frames
+#' - Progress tracking with time estimates for long operations
+#' - Automatic chunk size optimization
 #'
-#' @return a dataframe
+#' @param df **data.frame**. The input data frame to process.
+#' @param callback **function**. Function applied to each chunk. Must return a
+#'   data frame or data table.
+#' @param chunk_size **integer**. Number of rows per chunk. Default is 100.
+#' @param progress **logical**. Display progress messages with timing information.
+#'   Default is `TRUE`.
+#' @param ... Additional arguments passed to the `callback` function.
+#'
+#' @return **data.frame**. Combined result of applying `callback` to all chunks.
 #' @export
 process_df_chunked <- function(df,
                                callback,

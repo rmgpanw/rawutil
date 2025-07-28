@@ -7,17 +7,18 @@
 
 #' Display time taken message
 #'
-#' Helper function for displaying time taken messages within other functions.
-#' Use \code{\link[base]{proc.time}} at start of function and supply this as the
-#' `start_time` parameter to this function.
+#' Helper function that displays formatted time taken messages within other functions.
+#' Calculates and displays the elapsed time since a start time obtained from
+#' `proc.time()`.
 #'
-#' @param start_time The start time.
+#' The message format is: **"Time taken: X minutes, Y seconds."**
 #'
-#' @return A message stating time taken since start time
+#' @param start_time **numeric vector**. Start time obtained from `proc.time()`.
+#'
+#' @return **message**. Prints a formatted time elapsed message to console.
 #' @export
 #' @examples
-#' # a function that sleeps for a specified duration and displays a
-#' # 'time taken' message when completed
+#' # Create a function that sleeps and displays elapsed time
 #' sleep_fn <- function(duration) {
 #'   start_time <- proc.time()
 #'   Sys.sleep(duration)
@@ -39,26 +40,21 @@ time_taken_message <- function(start_time) {
 
 #' Revalue values in a vector
 #'
-#' Similar idea to
-#' \href{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html}{pandas.replace
-#' method} using a dictionary for the \code{value} argument. \strong{Note:} only
-#' works with vectors that are of type numeric (including integer) or character.
+#' Similar to the [pandas.DataFrame.replace](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html)
+#' method using a dictionary for the `value` argument. Replaces values in a vector
+#' based on a named mapping.
 #'
-#' @param x character. Name of column to be relabelled
-#' @param dict a named vector. \code{names(dict)} are the 'keys' i.e. the
-#'   existing values in \code{df[[colname]]} to be replaced. These should be
-#'   unique. An error is raised if non-unique values are found in
-#'   \code{names(dict)}
-#' @param default_value default value to use for values in \code{df[[colname]]}
-#'   that are not present in \code{names(dict)}. By default this is \code{NULL},
-#'   meaning that values not present in \code{names(dict)} will remain
-#'   unchanged.
-#' @param suppress_warnings bool. A warning is raised if the column to be
-#'   relabelled contains values not present in \code{dict}. This message is
-#'   silenced if \code{suppress_warnings} is \code{TRUE}. Default value is
-#'   \code{FALSE}.
+#' **Note:** Only works with vectors of type `numeric` (including `integer`) or `character`.
 #'
-#' @return A relabelled vector.
+#' @param x **vector**. The vector to be relabelled (numeric, integer, or character).
+#' @param dict **named vector**. Mapping where `names(dict)` are the existing values
+#'   to be replaced and values are the replacements. Names must be unique.
+#' @param default_value **scalar**. Default value for vector elements not present in
+#'   `names(dict)`. If `NULL` (default), unmatched values remain unchanged.
+#' @param suppress_warnings **logical**. If `FALSE` (default), warns when the vector
+#'   contains values not present in `dict`.
+#'
+#' @return **vector**. The input vector with values replaced according to `dict`.
 #' @export
 revalue_vector <-
   function(x,
@@ -118,27 +114,22 @@ revalue_vector <-
 
 #' Revalue values in a dataframe column
 #'
-#' Similar idea to
-#' \href{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html}{pandas.replace
-#' method} using a dictionary for the \code{value} argument. \strong{Note:} only
-#' works with columns that are of type numeric (including integer) or character.
+#' Similar to the [pandas.DataFrame.replace](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html)
+#' method using a dictionary for the `value` argument. Replaces values in a specific
+#' dataframe column based on a named mapping.
 #'
-#' @param df dataframe.
-#' @param colname character. Name of column to be relabelled
-#' @param dict a named vector. \code{names(dict)} are the 'keys' i.e. the
-#'   existing values in \code{df[[colname]]} to be replaced. These should be
-#'   unique. An error is raised if non-unique values are found in
-#'   \code{names(dict)}
-#' @param default_value default value to use for values in \code{df[[colname]]}
-#'   that are not present in \code{names(dict)}. By default this is \code{NULL},
-#'   meaning that values not present in \code{names(dict)} will remain
-#'   unchanged.
-#' @param suppress_warnings bool. A warning is raised if the column to be
-#'   relabelled contains values not present in \code{dict}. This message is
-#'   silenced if \code{suppress_warnings} is \code{TRUE}. Default value is
-#'   \code{FALSE}.
+#' **Note:** Only works with columns of type `numeric` (including `integer`) or `character`.
 #'
-#' @return dataframe
+#' @param df **data.frame**. The input dataframe.
+#' @param colname **character**. Name of the column to be relabelled.
+#' @param dict **named vector**. Mapping where `names(dict)` are the existing values
+#'   in `df[[colname]]` to be replaced and values are the replacements. Names must be unique.
+#' @param default_value **scalar**. Default value for column elements not present in
+#'   `names(dict)`. If `NULL` (default), unmatched values remain unchanged.
+#' @param suppress_warnings **logical**. If `FALSE` (default), warns when the column
+#'   contains values not present in `dict`.
+#'
+#' @return **data.frame**. The input dataframe with specified column values replaced.
 #' @export
 revalue_col <-
   function(df,
@@ -196,13 +187,20 @@ revalue_col <-
     return(df)
   }
 
-#' Print a data frame to the console for copying and pasting to a call to \code{tibble()}
+#' Print a data frame as a call to tibble()
 #'
-#' Convenience function
+#' Convenience function that prints a data frame to the console formatted as a
+#' call to `tibble::tibble()`. Useful for quickly converting small data frames
+#' into reproducible R code.
 #'
-#' @param df A data frame
+#' **Features:**
+#' - Handles character/factor columns with proper quoting
+#' - Converts `NA` values to proper R `NA` syntax
+#' - Formats numeric columns without quotes
 #'
-#' @return NULL.
+#' @param df **data.frame**. The data frame to convert to tibble syntax.
+#'
+#' @return **NULL**. Prints formatted output to console.
 #' @export
 #'
 #' @examples

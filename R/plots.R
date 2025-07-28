@@ -8,38 +8,41 @@
 
 #' Plot a heatmap
 #'
-#' Plots a heatmap using \code{\link[ggplot2]{geom_tile}}.
+#' Creates a customizable heatmap using **ggplot2** with extensive formatting options.
+#' Built on `geom_tile()` with support for tile annotations, custom ordering, and
+#' plotly integration.
 #'
-#' TODO: read this \href{https://jcoliver.github.io/learn-r/006-heatmaps.html}{blogpost}
+#' For more information on heatmap design, see this
+#' [tutorial](https://jcoliver.github.io/learn-r/006-heatmaps.html).
 #'
-#' @param df df
-#' @param x character
-#' @param y character
-#' @param fill character
-#' @param label character. Annotate tiles
-#' @param label_size numeric. Text size for tile annotations
-#' @param x_order chracter vector.
-#' @param y_order character vetor
-#' @param xlab character
-#' @param ylab character
-#' @param legend_lab character
-#' @param xlab_text_angle numeric
-#' @param ylab_text_angle numeric
-#' @param xlab_text_size numeric
-#' @param ylab_text_size numeric
-#' @param xtitle_text_size numeric
-#' @param ytitle_text_size numeric
-#' @param legend_title_size numeric
-#' @param legend_text_size numeric
-#' @param geom_tile_color character
-#' @param plotly_plot logical. Set as \code{TRUE} if wrapping this plot with
-#'   \code{\link[plotly]{ggplotly}}. Default is \code{FALSE}.
-#' @param xhjust numeric
-#' @param xvjust numeric
-#' @param yhjust numeric
-#' @param yvjust numeric
-#' @param lwd numeric. geom_tile line width
-#' @param linetype numeric. geom_tile line type
+#' @param df **data.frame**. The input data containing variables for x, y, and fill.
+#' @param x **character**. Column name for the x-axis variable.
+#' @param y **character**. Column name for the y-axis variable.  
+#' @param fill **character**. Column name for the fill variable (determines tile colors).
+#' @param label **character**. Optional column name for tile annotations. Default is `NULL`.
+#' @param label_size **numeric**. Text size for tile annotations when `label` is specified.
+#' @param x_order **character vector**. Optional custom ordering for x-axis values.
+#' @param y_order **character vector**. Optional custom ordering for y-axis values.
+#' @param xlab **character**. Label for the x-axis. Default is "x title".
+#' @param ylab **character**. Label for the y-axis. Default is "y title".
+#' @param legend_lab **character**. Label for the fill legend. Default is "legend title".
+#' @param xlab_text_angle **numeric**. Rotation angle for x-axis text labels. Default is 90.
+#' @param ylab_text_angle **numeric**. Rotation angle for y-axis text labels. Default is 0.
+#' @param xlab_text_size **numeric**. Text size for x-axis labels. Default is `NULL`.
+#' @param ylab_text_size **numeric**. Text size for y-axis labels. Default is `NULL`.
+#' @param xtitle_text_size **numeric**. Text size for x-axis title. Default is `NULL`.
+#' @param ytitle_text_size **numeric**. Text size for y-axis title. Default is `NULL`.
+#' @param legend_title_size **numeric**. Text size for legend title. Default is `NULL`.
+#' @param legend_text_size **numeric**. Text size for legend labels. Default is `NULL`.
+#' @param geom_tile_color **character**. Border color for tiles. Default is "white".
+#' @param plotly_plot **logical**. Set to `TRUE` when using with `plotly::ggplotly()`.
+#'   This disables `coord_equal()` to prevent display issues. Default is `FALSE`.
+#' @param xhjust **numeric**. Horizontal justification for x-axis text. Default is 0.95.
+#' @param xvjust **numeric**. Vertical justification for x-axis text. Default is 0.2.
+#' @param yhjust **numeric**. Horizontal justification for y-axis text. Default is `NULL`.
+#' @param yvjust **numeric**. Vertical justification for y-axis text. Default is `NULL`.
+#' @param lwd **numeric**. Line width for tile borders. Default is 0.5.
+#' @param linetype **numeric**. Line type for tile borders. Default is 1.
 #'
 #' @return ggplot object
 #' @export
