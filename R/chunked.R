@@ -222,7 +222,7 @@ fread_chunked <- function(file,
 #' **Benefits:**
 #' - Memory-efficient processing of large data frames
 #' - Progress tracking with time estimates for long operations
-#' - Automatic chunk size optimization
+#' - Automatic chunk size optimisation
 #'
 #' @param df **data.frame**. The input data frame to process.
 #' @param callback **function**. Function applied to each chunk. Must return a

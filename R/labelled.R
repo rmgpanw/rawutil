@@ -113,14 +113,14 @@ str_remove_from_var_labels <- function(df,
   return(df)
 }
 
-#' Capitalize first letter of all variable labels
+#' Capitalise first letter of all variable labels
 #'
-#' Updates all variable labels in a data frame by capitalizing the first letter
-#' of each label. Useful for standardizing label formatting.
+#' Updates all variable labels in a data frame by capitalising the first letter
+#' of each label. Useful for standardising label formatting.
 #'
 #' @param df **data.frame**. The input data frame with labelled variables.
 #'
-#' @return **data.frame**. Data frame with variable labels having capitalized first letters.
+#' @return **data.frame**. Data frame with variable labels having capitalised first letters.
 #' @export
 #'
 #' @family Labelled data utility functions

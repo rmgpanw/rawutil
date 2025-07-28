@@ -18,7 +18,7 @@
 #' @param df **data.frame**. The input data containing variables for x, y, and fill.
 #' @param x **character**. Column name for the x-axis variable.
 #' @param y **character**. Column name for the y-axis variable.  
-#' @param fill **character**. Column name for the fill variable (determines tile colors).
+#' @param fill **character**. Column name for the fill variable (determines tile colours).
 #' @param label **character**. Optional column name for tile annotations. Default is `NULL`.
 #' @param label_size **numeric**. Text size for tile annotations when `label` is specified.
 #' @param x_order **character vector**. Optional custom ordering for x-axis values.
@@ -34,7 +34,7 @@
 #' @param ytitle_text_size **numeric**. Text size for y-axis title. Default is `NULL`.
 #' @param legend_title_size **numeric**. Text size for legend title. Default is `NULL`.
 #' @param legend_text_size **numeric**. Text size for legend labels. Default is `NULL`.
-#' @param geom_tile_color **character**. Border color for tiles. Default is "white".
+#' @param geom_tile_colour **character**. Border colour for tiles. Default is "white".
 #' @param plotly_plot **logical**. Set to `TRUE` when using with `plotly::ggplotly()`.
 #'   This disables `coord_equal()` to prevent display issues. Default is `FALSE`.
 #' @param xhjust **numeric**. Horizontal justification for x-axis text. Default is 0.95.
@@ -69,7 +69,7 @@ plot_heatmap <- function(df,
                          ytitle_text_size = NULL,
                          legend_title_size = NULL,
                          legend_text_size = NULL,
-                         geom_tile_color = "white",
+                         geom_tile_colour = "white",
                          plotly_plot = FALSE,
                          lwd = 0.5,
                          linetype = 1) {
@@ -115,7 +115,7 @@ plot_heatmap <- function(df,
   # plot
   heatmap <- df %>%
     ggplot2::ggplot(ggplot2::aes(x = .data[[x]], y = .data[[y]], fill = .data[[fill]])) +
-    ggplot2::geom_tile(color = geom_tile_color, lwd = lwd, linetype = linetype) +
+    ggplot2::geom_tile(color = geom_tile_colour, lwd = lwd, linetype = linetype) +
 
     # axis and legend labels
     ggplot2::xlab(xlab) +
