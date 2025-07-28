@@ -1,13 +1,18 @@
-#' Convert columns of type logical to numeric labelled 'yes'/'no'
+#' Convert logical columns to numeric labelled 'Yes'/'No'
 #'
-#' Values in logical columns are converted from \code{TRUE}/\code{FALSE} to
-#' \code{1}/\code{2}, with labels 'Yes'/'No'.
+#' Converts columns of type `logical` to numeric labelled variables where:
+#' - `TRUE` → `1` with label "Yes"  
+#' - `FALSE` → `0` with label "No"
 #'
-#' @param df data frame
-#' @param selected_cols character. A vector of selected column names to convert
-#'   to labelled numeric. These should all be of type logical.
+#' This is useful for creating labelled data suitable for statistical analysis
+#' while preserving meaningful value labels.
 #'
-#' @return A data frame
+#' @param df **data.frame**. The input data frame.
+#' @param selected_cols **character vector**. Column names to convert. Must all be
+#'   logical type. If `NULL` (default), converts all logical columns.
+#'
+#' @return **data.frame**. Input dataframe with specified logical columns converted
+#'   to labelled numeric.
 #' @export
 logical_to_labelled <- function(df, selected_cols = NULL) {
 
@@ -52,12 +57,16 @@ logical_to_labelled <- function(df, selected_cols = NULL) {
   return(result)
 }
 
-#' Update variable labels - replace a string for all variable labels.
+#' Replace strings in all variable labels
 #'
-#' @param df A data frame
-#' @inheritParams stringr::str_replace_all
+#' Updates all variable labels in a data frame by applying `stringr::str_replace_all()`
+#' to each label attribute. Useful for batch updating of variable labels.
 #'
-#' @return A data frame
+#' @param df **data.frame**. The input data frame with labelled variables.
+#' @param pattern **character**. Regular expression pattern to match (passed to `str_replace_all()`).
+#' @param replacement **character**. Replacement string (passed to `str_replace_all()`).
+#'
+#' @return **data.frame**. Data frame with updated variable labels.
 #' @export
 #'
 #' @family Labelled data utility functions
@@ -77,12 +86,17 @@ str_replace_all_var_labels <- function(df,
   return(df)
 }
 
-#' Update variable labels - remove a string from all variable labels
+#' Remove strings from all variable labels
 #'
-#' @param df A data frame
-#' @inheritParams stringr::str_remove
+#' Updates all variable labels in a data frame by removing specified patterns using
+#' `stringr::str_remove()`. By default, removes trailing parenthetical expressions
+#' like "(f1234...)" commonly found in survey data.
 #'
-#' @return A data frame
+#' @param df **data.frame**. The input data frame with labelled variables.
+#' @param pattern **character**. Regular expression pattern to remove. Default removes
+#'   trailing whitespace and parenthetical expressions: `"\\s\\(f[:digit:]+.*\\)$"`.
+#'
+#' @return **data.frame**. Data frame with updated variable labels.
 #' @export
 #'
 #' @family Labelled data utility functions
@@ -99,11 +113,14 @@ str_remove_from_var_labels <- function(df,
   return(df)
 }
 
-#' Update variable labels - capitalise the first letter
+#' Capitalise first letter of all variable labels
 #'
-#' @param df A data frame
+#' Updates all variable labels in a data frame by capitalising the first letter
+#' of each label. Useful for standardising label formatting.
 #'
-#' @return A data frame
+#' @param df **data.frame**. The input data frame with labelled variables.
+#'
+#' @return **data.frame**. Data frame with variable labels having capitalised first letters.
 #' @export
 #'
 #' @family Labelled data utility functions

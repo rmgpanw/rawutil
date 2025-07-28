@@ -7,25 +7,30 @@
 
 # EXPORTED FUNCTIONS ------------------------------------------------------
 
-#' Summarise a dataframe
+#' Enhanced data frame summary with proportions
 #'
-#' A tidyverse-friendly summary function that summarises a dataframe by column
-#' type.
+#' A tidyverse-friendly summary function extending `skimr::skim()` with additional
+#' statistics for factor and logical variables. Works with `dplyr::group_by()` and
+#' the pipe operator.
 #'
-#' Works with \code{dplyr::group_by()} and the pipe. See the
-#' \code{\link[skimr]{skim}} documentation for more details. Adapts the
-#' \code{skimr::skim()} function to include proportion counts for factor
-#' variables
+#' **Enhanced features:**
+#' - **Factor variables**: Shows percentage breakdown of all levels
+#' - **Logical variables**: Reports percentage of `TRUE` values
+#' - **All variable types**: Includes standard `skimr` statistics
 #'
-#' In general, more informative results are returned if character-type columns
-#' are first converted to factors (see examples below)
+#' **Tip:** Convert character columns to factors first for more informative summaries.
 #'
-#' @inheritParams skimr::skim
+#' @param data **data.frame**. The data frame to summarize.
+#' @param ... Additional arguments passed to `skimr::skim()`.
+#' @param .data_name **character**. Optional name for the dataset in output.
+#'
+#' @return **tibble**. Summary statistics by variable type with enhanced factor/logical summaries.
+#' @export
 #' @examples
-#' # summarise the iris dataset
+#' # Basic summary
 #' my_skim(iris)
 #'
-#' # summarise the mtcars dataset by transmissions type ("am": 0 = automatic, 1 = manual)
+#' # Grouped summary with factor conversion
 #' library(magrittr)
 #' mtcars %>%
 #'   dplyr::mutate(
@@ -35,8 +40,6 @@
 #'     ) %>%
 #'   dplyr::group_by(am) %>%
 #'   my_skim()
-#'
-#' @export
 my_skim <- function(data,
                     ...,
                     .data_name = NULL) {
